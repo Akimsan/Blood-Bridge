@@ -15,7 +15,7 @@ const Header = () => {
               <a href="/services" className="hover:text-blue-300">Services</a>
             </li>
             <li>
-              <a href="/contact" className="hover:text-blue-300">Contact Us</a>
+              <a href="/aboutUs" className="hover:text-blue-300">About Us</a>
             </li>
             <li>
               <a href="/login" className="bg-white hover:bg-red-200 text-white py-2 px-4 rounded"><Link to="/sign-up" className='text-black font-bold'>SignUp</Link></a>

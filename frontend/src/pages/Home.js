@@ -19,7 +19,7 @@ const Home = () => {
           </div>
 
           <div className="mt-6 h-12 mx-2 rounded-lg shadow-2xl text-center text-red-950 font-bold">
-            <a href="#">Profile</a>
+            <a href="#"><Link to="/donors">Donors</Link></a>
           </div>
 
           <div className="mt-6 h-12 mx-2 rounded-lg shadow-2xl text-center text-red-950 font-bold">

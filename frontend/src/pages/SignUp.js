@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+
   const navigate = useNavigate();//inbuilt 
 
   const [form, setForm] = useState({
@@ -44,7 +45,6 @@ const handleSubmit = async (e) => {
       const data = await response.json();
       if (response.ok) {
         console.log('Form submitted successfully', data);
-
         navigate('/');
 
         // Handle successful signup (e.g., redirect to login page, show success message)
@@ -62,7 +62,7 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-cover bg-center bg-custom-background backdrop-blur-lg max-h-full w-full">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+      <div className="bg-white p-8 rounded-xl shadow-md w-full mt-16 max-w-md">
         <h2 className="text-2xl font-bold mb-8 text-center">Sign Up</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">

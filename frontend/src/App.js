@@ -11,6 +11,9 @@ import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Registration from './pages/Registration';
+import Search from './pages/Donors';
+import AboutUsPage from './pages/AboutUsPage';
+import ServicesPage from './pages/ServicesPage';
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
                 <Route path="/sign-up"  element={ <SignUp />}/>
                  <Route path="/about"  element={ <About />}/>
                  <Route path="/register"  element={ <Registration/>}/>
+                  <Route path="/donors"  element={ <Search/>}/>
+                  <Route path="/aboutUs"  element={ <AboutUsPage/>}/>
+                   <Route path="/services"  element={ <ServicesPage/>}/>
 
                
               </Routes>

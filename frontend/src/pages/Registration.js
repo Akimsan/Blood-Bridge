@@ -71,7 +71,7 @@ const Registration = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cover bg-center bg-[url('https://www.example.com/your-background-image.jpg')] flex items-center justify-center">
+    <div className=" mt-16 min-h-screen bg-cover bg-center bg-[url('https://www.example.com/your-background-image.jpg')] flex items-center justify-center">
       <div className="max-w-lg w-full p-8 bg-white bg-opacity-90 shadow-lg rounded-lg">
         <h2 className="text-3xl font-bold mb-6 text-gray-800">
           Blood Donation Registration
