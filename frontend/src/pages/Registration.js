@@ -1,8 +1,12 @@
 
 // src/Registration.js
 import React, { useState } from "react";
-//hehe
+import {useNavigate } from 'react-router-dom';
+
 const Registration = () => {
+   
+  const navigate = useNavigate();//inbuilt 
+
   const [formData, setFormData] = useState({
     fullName: "",
     age: "",
@@ -19,10 +23,51 @@ const Registration = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here (e.g., sending data to an API)
-    console.log("Form submitted", formData);
+  const handleSubmit = async(e) => {
+      e.preventDefault();
+
+         // Destructure formData
+    const { fullName, age, bloodType, contactNumber, address, healthIssues, lastDonationDate, emergencyContact } = formData;
+
+    // Add form validation logic here
+   if (!fullName || !age || !bloodType || !contactNumber || !address || !healthIssues || !emergencyContact) {
+    alert("All fields are required!");
+    return;
+  }
+
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          age:formData.age,
+          bloodType:formData.age,
+          contactNumber:formData.contactNumber,
+          address:formData.address,
+          healthIssues:formData.healthIssues,
+          lastDonationDate:formData.lastDonationDate,
+          emergencyContact:formData.emergencyContact
+        })
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        console.log('Donor Form submitted successfully', data);
+
+        navigate('/');
+
+        // Handle successful signup (e.g., redirect to login page, show success message)
+      } else {
+        console.error('Error submitting form', data);
+        // Handle error (e.g., show error message)
+      }
+    } catch (error) {
+      console.error('Error submitting form', error);
+      // Handle error (e.g., show error message)
+    }
   };
 
   return (

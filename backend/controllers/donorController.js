@@ -1,6 +1,10 @@
 // backend/controllers/donorController.js
 const Donor = require("../models/Donor");
 
+
+
+
+// http://localhost:5000/api/auth/register
 exports.registerDonor = async (req, res) => {
  const {fullName,age,bloodType,contactNumber,address,healthIssues,lastDonationDate,emergencyContact} = req.body;
  try {
@@ -18,11 +22,11 @@ exports.registerDonor = async (req, res) => {
  }
 };
 
-exports.getDonors = async (req, res) => {
-  try {
-    const donors = await Donor.find({ bloodType: req.query.bloodType });
-    res.json(donors);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-};
+// exports.getDonors = async (req, res) => {
+//   try {
+//     const donors = await Donor.find({ bloodType: req.query.bloodType });
+//     res.json(donors);
+//   } catch (error) {
+//     res.status(400).json({ error: error.message });
+//   }
+// };
